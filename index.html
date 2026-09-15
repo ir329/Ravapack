@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>سینا | روانشناسی، خودشناسی و رشد فردی</title>
+  <meta name="description" content="آموزش روانشناسی، خودشناسی، رشد فردی، دوره‌ها و مشاوره‌های کاربردی با سینا">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070707;
+      --bg2: #0d0d0d;
+      --card: #111111;
+      --card2: #151515;
+      --gold: #d8b46a;
+      --gold-light: #f2d99a;
+      --white: #ffffff;
+      --text: #e7e7e7;
+      --muted: #999999;
+      --border: rgba(255,255,255,.08);
+      --green: #36d399;
+      --danger: #ff7070;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(216,180,106,.08), transparent 28%),
+        radial-gradient(circle at 10% 40%, rgba(216,180,106,.04), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 2;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(7,7,7,.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #bdbdbd;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-btn {
+      padding: 10px 20px;
+      border: 1px solid rgba(216,180,106,.5);
+      border-radius: 50px;
+      color: var(--gold);
+      transition: .3s;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 80px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(216,180,106,.08);
+      filter: blur(100px);
+      border-radius: 50%;
+      top: 10%;
+      right: 5%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 16px;
+      border: 1px solid rgba(216,180,106,.3);
+      border-radius: 50px;
+      color: var(--gold-light);
+      background: rgba(216,180,106,.06);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.25;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aaa;
+      font-size: 18px;
+      margin: 25px 0 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 25px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #111;
+      box-shadow: 0 10px 30px rgba(216,180,106,.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(216,180,106,.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 480px;
+      border-radius: 35px;
+      background:
+        linear-gradient(145deg, rgba(216,180,106,.14), transparent 35%),
+        linear-gradient(145deg, #161616, #090909);
+      border: 1px solid rgba(216,180,106,.2);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-end;
+      padding: 35px;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "S";
+      position: absolute;
+      font-size: 420px;
+      font-weight: 900;
+      color: rgba(216,180,106,.035);
+      left: 10px;
+      top: -100px;
+    }
+
+    .profile-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-info small {
+      color: var(--gold);
+    }
+
+    .profile-info h2 {
+      font-size: 32px;
+      color: white;
+      margin: 8px 0;
+    }
+
+    .profile-info p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* ================= STATS ================= */
+
+    .stats {
+      padding: 25px 0 80px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .stat {
+      padding: 25px;
+      text-align: center;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 30px;
+    }
+
+    .stat span {
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 55px;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      color: white;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: #999;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    /* ================= COURSES ================= */
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .course-card {
+      background: linear-gradient(145deg, #151515, #0d0d0d);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(216,180,106,.35);
+    }
+
+    .course-number {
+      color: var(--gold);
+      font-size: 13px;
+    }
+
+    .course-card h3 {
+      color: white;
+      font-size: 20px;
+      margin: 12px 0;
+    }
+
+    .course-card p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    details {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 20px 25px;
+      cursor: pointer;
+      color: white;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      padding: 0 25px 22px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-box {
+      padding: 40px;
+      border-radius: 30px;
+      background: linear-gradient(145deg,#161616,#0b0b0b);
+      border: 1px solid var(--border);
+      position: sticky;
+      top: 110px;
+    }
+
+    .about-box .big {
+      font-size: 70px;
+      color: var(--gold);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .about-box h3 {
+      color: white;
+      font-size: 25px;
+      margin: 15px 0;
+    }
+
+    .about-box p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .about-text h3 {
+      color: white;
+      font-size: 25px;
+      margin: 30px 0 12px;
+    }
+
+    .about-text p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    /* ================= ROADMAP ================= */
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .road-step {
+      padding: 25px;
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .road-step strong {
+      display: block;
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .road-step h4 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .road-step p {
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* ================= DAILY ================= */
+
+    .daily-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 15px;
+    }
+
+    .daily-card {
+      min-height: 190px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(145deg,#141414,#0b0b0b);
+    }
+
+    .daily-card span {
+      font-size: 30px;
+    }
+
+    .daily-card h3 {
+      color: white;
+      margin: 10px 0;
+    }
+
+    .daily-card p {
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* ================= FREE EDUCATION ================= */
+
+    .free-box {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(216,180,106,.12), transparent 35%),
+        #111;
+      border: 1px solid rgba(216,180,106,.18);
+      padding: 55px;
+      border-radius: 30px;
+    }
+
+    .free-box p {
+      color: #aaa;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      border-right: 3px solid var(--gold);
+      padding: 15px 20px;
+      color: white !important;
+      font-size: 20px;
+    }
+
+    /* ================= LONG CONTENT ================= */
+
+    .knowledge {
+      display: grid;
+      gap: 25px;
+    }
+
+    .knowledge-card {
+      background: #101010;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px;
+    }
+
+    .knowledge-card h3 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .knowledge-card h4 {
+      color: var(--gold);
+      margin: 28px 0 8px;
+    }
+
+    .knowledge-card p {
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 30px;
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .service h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .service strong {
+      display: block;
+      color: var(--gold);
+      margin-top: 15px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .product {
+      padding: 32px;
+      border-radius: 25px;
+      background: linear-gradient(145deg,#171717,#0d0d0d);
+      border: 1px solid var(--border);
+    }
+
+    .product h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .product p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .product ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .product li {
+      color: #bbb;
+      font-size: 13px;
+      margin: 6px 0;
+    }
+
+    .product li::before {
+      content: "✓";
+      color: var(--gold);
+      margin-left: 8px;
+    }
+
+    /* ================= TESTIMONIALS ================= */
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .testimonial {
+      padding: 25px;
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .testimonial p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .testimonial strong {
+      display: block;
+      color: var(--gold);
+      margin-top: 15px;
+      font-size: 12px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background:
+        radial-gradient(circle at center, rgba(216,180,106,.09), transparent 45%),
+        #0b0b0b;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-box {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(35px,5vw,58px);
+      color: white;
+      line-height: 1.3;
+    }
+
+    .contact-box p {
+      color: #999;
+      margin: 20px 0 30px;
+    }
+
+    .social {
+      display: inline-flex;
+      padding: 12px 22px;
+      border-radius: 50px;
+      border: 1px solid rgba(216,180,106,.35);
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 350px;
+      }
+
+      .course-grid,
+      .service-grid,
+      .product-grid,
+      .testimonials {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .daily-grid {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .roadmap {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .about-box {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      .container {
+        width: min(100% - 25px, 1180px);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .course-grid,
+      .service-grid,
+      .product-grid,
+      .testimonials,
+      .daily-grid,
+      .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .free-box,
+      .knowledge-card {
+        padding: 25px;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      <span>سینا</span> | روانشناسی
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#courses">دوره‌ها</a></li>
+      <li><a href="#about">صاحب پیج</a></li>
+      <li><a href="#free">آموزش رایگان</a></li>
+      <li><a href="#services">خدمات</a></li>
+      <li><a href="#products">محصولات</a></li>
+      <li><a href="#faq">سؤالات متداول</a></li>
+    </ul>
+
+    <a href="https://instagram.com/sina" target="_blank" class="nav-btn">
+      ارتباط با سینا
+    </a>
+
+  </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="reveal">
+
+      <span class="badge">
+        🧠 روانشناسی • خودشناسی • رشد فردی
+      </span>
+
+      <h1>
+        بهتر خودت را بشناس،
+        <span>بهتر زندگی کن.</span>
+      </h1>
+
+      <p>
+        اینجا درباره روانشناسی، خودشناسی، رشد فردی و مهارت‌هایی
+        صحبت می‌کنیم که بتوانند از فضای تئوری بیرون بیایند
+        و در زندگی واقعی قابل استفاده باشند.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#courses" class="btn btn-primary">
+          مشاهده دوره‌ها
+        </a>
+
+        <a href="#free" class="btn btn-secondary">
+          آموزش‌های رایگان
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card reveal">
+
+      <div class="profile-info">
+
+        <small>صاحب پیج و مدرس</small>
+
+        <h2>سینا</h2>
+
+        <p>
+          ۱۰ سال تجربه در مسیر یادگیری،
+          آموزش، کار و رشد فردی.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+  <div class="container stats-grid">
+
+    <div class="stat reveal">
+      <strong>۱۰+</strong>
+      <span>سال تجربه</span>
+    </div>
+
+    <div class="stat reveal">
+      <strong>۱۱</strong>
+      <span>مسیر آموزشی</span>
+    </div>
+
+    <div class="stat reveal">
+      <strong>۱۰۰٪</strong>
+      <span>تمرکز روی کاربرد</span>
+    </div>
+
+    <div class="stat reveal">
+      <strong>∞</strong>
+      <span>یادگیری و رشد</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= COURSES ================= -->
+
+<section id="courses">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل اول</div>
+
+      <h2>
+        دوره‌ها و <span class="gold">مشاوره‌ها</span>
+      </h2>
+
+      <p>
+        مسیرهای آموزشی و مشاوره‌ای برای کسانی که
+        می‌خواهند از دانستن به سمت اجرا حرکت کنند.
+      </p>
+
+    </div>
+
+
+    <div class="course-grid">
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۱</span>
+        <h3>خودشناسی کاربردی</h3>
+        <p>
+          شناخت بهتر افکار، رفتارها، نقاط قوت، ضعف‌ها و
+          الگوهایی که روی تصمیم‌های شما اثر می‌گذارند.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۲</span>
+        <h3>مدیریت افکار و احساسات</h3>
+        <p>
+          یادگیری روش‌های ساده برای مشاهده و مدیریت بهتر
+          افکار، نگرانی‌ها و واکنش‌های احساسی.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۳</span>
+        <h3>اعتمادبه‌نفس و عزت‌نفس</h3>
+        <p>
+          ساختن رفتارهای سالم‌تر و نگاه متعادل‌تر نسبت
+          به ارزشمندی و توانایی‌های خود.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۴</span>
+        <h3>روابط و مهارت ارتباطی</h3>
+        <p>
+          شناخت الگوهای ارتباطی، مرزبندی و گفت‌وگوی
+          مؤثرتر در روابط مختلف.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۵</span>
+        <h3>کنترل اهمال‌کاری</h3>
+        <p>
+          پیدا کردن دلایل تعویق کارها و ساختن سیستم‌هایی
+          برای شروع و ادامه دادن.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۶</span>
+        <h3>نظم شخصی و ساخت عادت</h3>
+        <p>
+          ساخت عادت‌های کوچک و ماندگار بدون وابستگی
+          دائمی به انگیزه.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۷</span>
+        <h3>رشد فردی</h3>
+        <p>
+          مشخص کردن هدف‌ها، اولویت‌ها و ساختن مسیر
+          قابل اجرای رشد شخصی.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۸</span>
+        <h3>ذهنیت حرفه‌ای و کاری</h3>
+        <p>
+          توسعه نگاه حرفه‌ای، مسئولیت‌پذیری، تصمیم‌گیری
+          و عملکرد بهتر در محیط کار.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۰۹</span>
+        <h3>مشاوره فردی</h3>
+        <p>
+          بررسی یک مسئله مشخص با تمرکز روی شرایط
+          واقعی و قدم‌های بعدی فرد.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۱۰</span>
+        <h3>مسیر شغلی و حرفه‌ای</h3>
+        <p>
+          بررسی توانایی‌ها، گزینه‌ها و تصمیم‌های کاری
+          برای ساختن مسیر روشن‌تر.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۱۱</span>
+        <h3>رشد شخصی و عملکردی</h3>
+        <p>
+          تبدیل تصمیم‌ها به عمل و پیدا کردن موانعی که
+          جلوی پیشرفت را گرفته‌اند.
+        </p>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-number">۱۲</span>
+        <h3>برنامه اختصاصی رشد</h3>
+        <p>
+          طراحی یک مسیر شخصی بر اساس شرایط، هدف‌ها
+          و نقطه شروع خود فرد.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل دوم</div>
+
+      <h2>سؤالات <span class="gold">متداول</span></h2>
+
+      <p>
+        قبل از خرید، هر سؤالی دارید باید جواب روشن داشته باشد.
+      </p>
+
+    </div>
+
+    <div class="faq">
+
+      <details class="reveal">
+        <summary>چرا باید مطالب این صفحه را دنبال کنم؟</summary>
+        <p>
+          چون هدف صفحه انتشار جمله‌های انگیزشی و مطالب تکراری نیست.
+          تلاش می‌کنیم موضوعات روانشناسی، خودشناسی و رشد فردی را ساده و کاربردی ارائه کنیم.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>آیا مطالب صفحه ارزش یادگیری دارند؟</summary>
+        <p>
+          تلاش ما این است که هر مطلب یا یک نکته قابل استفاده داشته باشد
+          یا زاویه دید تازه‌ای ایجاد کند.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>آیا آموزش رایگان هم دارید؟</summary>
+        <p>
+          بله. بخش قابل توجهی از آموزش‌های پایه به‌صورت رایگان منتشر می‌شود
+          تا قبل از خرید، با سبک و کیفیت آموزش آشنا شوید.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>تفاوت دوره با مشاوره چیست؟</summary>
+        <p>
+          دوره ساختاریافته و آموزشی است؛ مشاوره شخصی‌تر بوده
+          و روی مسئله و شرایط خود فرد تمرکز دارد.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>آیا بعد از خرید پشتیبانی وجود دارد؟</summary>
+        <p>
+          هدف مجموعه این نیست که ارتباط بعد از خرید تمام شود.
+          بسته به نوع محصول یا خدمت، پاسخگویی و همراهی در نظر گرفته می‌شود.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>آیا قیمت دوره‌ها مقرون‌به‌صرفه است؟</summary>
+        <p>
+          قیمت باید در کنار حجم آموزش، ساختار، کاربرد و پشتیبانی سنجیده شود.
+          تلاش می‌کنیم ارزش واقعی محصول با هزینه آن تناسب داشته باشد.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل سوم</div>
+
+      <h2>صاحب پیج؛ <span class="gold">سینا</span></h2>
+
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-box reveal">
+
+        <div class="big">۱۰+</div>
+
+        <h3>سال تجربه</h3>
+
+        <p>
+          یک دهه یادگیری، کار، تجربه، آزمون‌وخطا
+          و ساختن مسیر حرفه‌ای.
+        </p>
+
+      </div>
+
+      <div class="about-text reveal">
+
+        <p>
+          پشت این صفحه، سینا قرار دارد؛ کسی که حدود ۱۰ سال است
+          در این مسیر فعالیت کرده و در طول این سال‌ها با تجربه‌های
+          مختلف، تصمیم‌های درست و اشتباه و موقعیت‌های متفاوت روبه‌رو شده است.
+        </p>
+
+        <p>
+          در طول این سال‌ها یک نکته برای او روشن‌تر شده:
+          خیلی از چیزهایی که در ابتدا پیچیده به نظر می‌رسند،
+          وقتی درست فهمیده شوند، قابل مدیریت‌تر می‌شوند.
+        </p>
+
+        <p>
+          قرار نیست اینجا تصویری غیرواقعی از موفقیت ساخته شود.
+          مسیر حرفه‌ای همیشه ترکیبی از روزهای خوب، تصمیم‌های سخت،
+          اشتباه، اصلاح، یادگیری و دوباره شروع کردن است.
+        </p>
+
+        <p>
+          هدف این صفحه انتقال بخشی از تجربه‌هایی است که طی این سال‌ها
+          به دست آمده؛ تجربه‌هایی که شاید بتوانند مسیر یادگیری و تصمیم‌گیری
+          مخاطب را کوتاه‌تر و روشن‌تر کنند.
+        </p>
+
+        <p>
+          ۱۰ سال تجربه یعنی ۱۰ سال یادگیری مداوم؛
+          نه ادعای بی‌نقص بودن.
+        </p>
+
+        <h3>یک نگاه ساده</h3>
+
+        <p>
+          قرار نیست بگوییم همه جواب‌ها را داریم؛
+          قرار است کمک کنیم سؤال‌های درست‌تری بپرسید
+          و تصمیم‌های آگاهانه‌تری بگیرید.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DAILY ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل چهارم</div>
+
+      <h2>روزمرگی‌های <span class="gold">سینا</span></h2>
+
+      <p>
+        پشت هر مسیر حرفه‌ای، یک زندگی واقعی وجود دارد.
+      </p>
+
+    </div>
+
+    <div class="daily-grid">
+
+      <div class="daily-card reveal">
+        <span>🏋🏻</span>
+        <h3>ورزش</h3>
+        <p>نظم، انرژی و مراقبت از خود.</p>
+      </div>
+
+      <div class="daily-card reveal">
+        <span>📚</span>
+        <h3>کتاب</h3>
+        <p>یادگیری برای پیدا کردن ایده‌های تازه.</p>
+      </div>
+
+      <div class="daily-card reveal">
+        <span>🔎</span>
+        <h3>تحقیق</h3>
+        <p>بررسی موضوعات قبل از تبدیل شدن به محتوا.</p>
+      </div>
+
+      <div class="daily-card reveal">
+        <span>💻</span>
+        <h3>کار</h3>
+        <p>برنامه‌ریزی، اجرا، پیگیری و اصلاح.</p>
+      </div>
+
+      <div class="daily-card reveal">
+        <span>🤍</span>
+        <h3>شکرگزاری</h3>
+        <p>دیدن داشته‌های امروز در کنار تلاش برای فردا.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FREE ================= -->
+
+<section id="free">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل پنجم</div>
+
+      <h2>آموزش‌های <span class="gold">رایگان</span></h2>
+
+    </div>
+
+    <div class="free-box reveal">
+
+      <p>
+        آموزش رایگان برای ما فقط یک ابزار تبلیغاتی نیست.
+        مخاطب باید بتواند قبل از خرید، واقعاً چیزی یاد بگیرد.
+      </p>
+
+      <p>
+        هدف آموزش رایگان این است که مخاطب با مفاهیم پایه آشنا شود،
+        مسائل روزمره خود را بهتر تحلیل کند و ابزارهایی برای شروع مسیر
+        در اختیار داشته باشد.
+      </p>
+
+      <p>
+        محتوای رایگان قرار نیست عمداً ناقص و بی‌ارزش ساخته شود
+        تا مخاطب مجبور به خرید شود. برعکس، باید ارزش واقعی داشته باشد
+        تا مخاطب بتواند کیفیت و سبک آموزش را بشناسد.
+      </p>
+
+      <p>
+        اگر کسی هنوز نمی‌داند از کجا شروع کند،
+        آموزش‌های رایگان بهترین نقطه شروع هستند.
+      </p>
+
+      <p class="quote">
+        ارزش قبل از فروش؛ اعتماد قبل از خرید؛
+        و نتیجه بعد از یادگیری.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= KNOWLEDGE ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل ششم</div>
+
+      <h2>
+        ترفندها و نکته‌های
+        <span class="gold">کاربردی</span>
+      </h2>
+
+    </div>
+
+    <div class="knowledge">
+
+      <!-- BUSINESS MODEL -->
+
+      <article class="knowledge-card reveal">
+
+        <h3>۱. بوم کسب‌وکار</h3>
+
+        <p>
+          بوم کسب‌وکار یا Business Model Canvas ابزاری است برای دیدن
+          تصویر کلی یک کسب‌وکار در یک ساختار ساده و منظم.
+        </p>
+
+        <h4>بخش‌های اصلی بوم</h4>
+
+        <p>
+          ۱. بخش‌های مشتریان<br>
+          ۲. ارزش پیشنهادی<br>
+          ۳. کانال‌ها<br>
+          ۴. ارتباط با مشتری<br>
+          ۵. جریان‌های درآمدی<br>
+          ۶. منابع کلیدی<br>
+          ۷. فعالیت‌های کلیدی<br>
+          ۸. شرکای کلیدی<br>
+          ۹. ساختار هزینه‌ها
+        </p>
+
+        <h4>چرا مهم است؟</h4>
+
+        <p>
+          چون کمک می‌کند بفهمید دقیقاً برای چه کسی کار می‌کنید،
+          چه ارزشی ارائه می‌دهید، از چه مسیری مشتری جذب می‌کنید
+          و چگونه کسب‌وکار درآمد ایجاد می‌کند.
+        </p>
+
+        <h4>از کجا شروع کنیم؟</h4>
+
+        <p>
+          از مشتری شروع کنید. مشخص کنید چه کسی است، چه مشکلی دارد
+          و چرا باید راه‌حل شما را انتخاب کند. سپس مسیر ارتباط،
+          فروش، درآمد، منابع، فعالیت‌ها و هزینه‌ها را مشخص کنید.
+        </p>
+
+        <p>
+          بوم کسب‌وکار یک سند ثابت نیست؛ با تغییر بازار،
+          مشتری و محصول باید دوباره بررسی و اصلاح شود.
+        </p>
+
+      </article>
+
+
+      <!-- SALES FUNNEL -->
+
+      <article class="knowledge-card reveal">
+
+        <h3>۲. قیف فروش</h3>
+
+        <p>
+          قیف فروش مسیری است که مخاطب از اولین آشنایی با شما
+          تا تبدیل شدن به مشتری طی می‌کند.
+        </p>
+
+        <h4>مرحله اول؛ آگاهی</h4>
+
+        <p>
+          مخاطب هنوز شما را نمی‌شناسد. محتوای شما باید بتواند
+          یک مسئله واقعی یا سؤال مهم او را هدف قرار دهد.
+        </p>
+
+        <h4>مرحله دوم؛ علاقه</h4>
+
+        <p>
+          وقتی مخاطب وارد صفحه شد، کیفیت و نظم محتوا اهمیت پیدا می‌کند.
+        </p>
+
+        <h4>مرحله سوم؛ اعتماد</h4>
+
+        <p>
+          آموزش رایگان، پاسخگویی، تجربه، شفافیت و کیفیت محتوا
+          به ساخت اعتماد کمک می‌کنند.
+        </p>
+
+        <h4>مرحله چهارم؛ بررسی</h4>
+
+        <p>
+          مخاطب می‌خواهد بداند محصول چیست، برای چه کسی مناسب است،
+          چه نتیجه‌ای دارد و آیا ارزش خرید دارد یا نه.
+        </p>
+
+        <h4>مرحله پنجم؛ خرید</h4>
+
+        <p>
+          فرآیند خرید باید ساده، شفاف و بدون پیچیدگی باشد.
+        </p>
+
+        <h4>مرحله ششم؛ بعد از خرید</h4>
+
+        <p>
+          تجربه مشتری بعد از پرداخت تمام نمی‌شود.
+          نحوه دریافت، استفاده و پشتیبانی هم بخشی از قیف فروش است.
+        </p>
+
+        <h4>اصل مهم</h4>
+
+        <p>
+          همه محتواها قرار نیست بفروشند.
+          بعضی برای جذب، بعضی برای آموزش، بعضی برای اعتمادسازی
+          و بعضی برای معرفی محصول هستند.
+        </p>
+
+      </article>
+
+
+      <!-- CONSISTENCY -->
+
+      <article class="knowledge-card reveal">
+
+        <h3>۳. تداوم در کار</h3>
+
+        <p>
+          شروع کردن معمولاً ساده‌تر از ادامه دادن است.
+          تداوم یعنی بتوانید حتی وقتی انگیزه اولیه وجود ندارد،
+          قدم بعدی را بردارید.
+        </p>
+
+        <h4>هدف را کوچک کنید</h4>
+
+        <p>
+          به‌جای هدف‌های بسیار بزرگ، کار را به قدم‌های کوچک تقسیم کنید.
+        </p>
+
+        <h4>برنامه واقعی داشته باشید</h4>
+
+        <p>
+          برنامه باید با زندگی واقعی شما هماهنگ باشد،
+          نه با نسخه ایده‌آلی که روی کاغذ ساخته‌اید.
+        </p>
+
+        <h4>زمان مشخص تعیین کنید</h4>
+
+        <p>
+          وقتی کار زمان مشخص داشته باشد، احتمال انجام آن بیشتر می‌شود.
+        </p>
+
+        <h4>افت انگیزه را طبیعی بدانید</h4>
+
+        <p>
+          قرار نیست هر روز با انرژی کامل کار کنید.
+          در روزهای کم‌انرژی، نسخه کوچک‌تر کار را انجام دهید.
+        </p>
+
+        <h4>پیشرفت را ثبت کنید</h4>
+
+        <p>
+          هر هفته ببینید چه یاد گرفته‌اید، چه کاری انجام داده‌اید
+          و چه چیزی نیاز به اصلاح دارد.
+        </p>
+
+        <p>
+          استمرار یعنی ادامه دادن آگاهانه؛ نه اصرار کورکورانه.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT US ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل هفتم</div>
+
+      <h2>درباره <span class="gold">ما</span></h2>
+
+    </div>
+
+    <div class="about-text reveal">
+
+      <p>
+        اگر این صفحه را دنبال می‌کنید، از همراهی شما خوشحالیم.
+      </p>
+
+      <p>
+        این مجموعه با یک ایده ساده شکل گرفته:
+        آموزش باید بتواند به زندگی واقعی وصل شود.
+      </p>
+
+      <p>
+        دنیای امروز پر از اطلاعات است.
+        مشکل بسیاری از افراد نداشتن اطلاعات نیست؛
+        مشکل این است که نمی‌دانند با این اطلاعات چه کار کنند.
+      </p>
+
+      <p>
+        به همین دلیل تلاش می‌کنیم مطالب را ساده،
+        قابل فهم و کاربردی ارائه کنیم.
+      </p>
+
+      <p>
+        قرار نیست با یک دوره یا یک پست وعده تغییر یک‌شبه بدهیم.
+        هدف، ایجاد فهم بهتر، تصمیم بهتر و حرکت آگاهانه‌تر است.
+      </p>
+
+      <h3>ارزش‌های ما</h3>
+
+      <p>
+        <strong class="gold">صداقت:</strong>
+        چیزی را که نمی‌دانیم ادعا نمی‌کنیم.
+      </p>
+
+      <p>
+        <strong class="gold">سادگی:</strong>
+        مطالب پیچیده را تا جای ممکن قابل فهم می‌کنیم.
+      </p>
+
+      <p>
+        <strong class="gold">کاربرد:</strong>
+        آموزش باید در زندگی واقعی قابل استفاده باشد.
+      </p>
+
+      <p>
+        <strong class="gold">احترام:</strong>
+        مخاطب فقط یک عدد یا یک خرید نیست.
+      </p>
+
+    </div>
+
+
+    <div class="section-head reveal" style="margin-top:70px">
+
+      <div class="section-label">نقشه راه</div>
+
+      <h2>از شروع تا <span class="gold">رشد</span></h2>
+
+    </div>
+
+    <div class="roadmap">
+
+      <div class="road-step reveal">
+        <strong>۰۱</strong>
+        <h4>آشنایی</h4>
+        <p>با آموزش‌های رایگان شروع کنید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۲</strong>
+        <h4>شناخت</h4>
+        <p>نیاز و مسئله اصلی خود را مشخص کنید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۳</strong>
+        <h4>یادگیری</h4>
+        <p>مطالب مرتبط را منظم دنبال کنید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۴</strong>
+        <h4>اجرا</h4>
+        <p>یک نکته را در زندگی واقعی اجرا کنید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۵</strong>
+        <h4>ارزیابی</h4>
+        <p>نتیجه را بررسی و نقاط ضعف را پیدا کنید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۶</strong>
+        <h4>تعمیق</h4>
+        <p>در صورت نیاز سراغ دوره تخصصی بروید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۷</strong>
+        <h4>شخصی‌سازی</h4>
+        <p>برای مسائل شخصی‌تر از مشاوره استفاده کنید.</p>
+      </div>
+
+      <div class="road-step reveal">
+        <strong>۰۸</strong>
+        <h4>استمرار</h4>
+        <p>یادگیری را به رفتار تبدیل کنید.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل هشتم</div>
+
+      <h2>خدمات <span class="gold">ما</span></h2>
+
+      <p>
+        خدماتی برای زمانی که آموزش عمومی کافی نیست
+        و نیاز به مسیر مشخص‌تر دارید.
+      </p>
+
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service reveal">
+        <h3>مشاوره فردی</h3>
+        <p>برای بررسی یک مسئله مشخص و روشن‌تر شدن قدم بعدی.</p>
+        <strong>حل مشکل: سردرگمی در یک مسئله مشخص</strong>
+      </div>
+
+      <div class="service reveal">
+        <h3>مشاوره مسیر رشد</h3>
+        <p>برای کسانی که ظرفیت رشد دارند اما مسیرشان پراکنده است.</p>
+        <strong>ارزش: ساخت مسیر روشن‌تر</strong>
+      </div>
+
+      <div class="service reveal">
+        <h3>مشاوره مسیر کاری</h3>
+        <p>بررسی انتخاب‌ها و تصمیم‌های حرفه‌ای.</p>
+        <strong>ارزش: تصمیم‌گیری آگاهانه‌تر</strong>
+      </div>
+
+      <div class="service reveal">
+        <h3>برنامه شخصی</h3>
+        <p>طراحی مسیر عملی متناسب با شرایط فرد.</p>
+        <strong>ارزش: کاهش پراکندگی</strong>
+      </div>
+
+      <div class="service reveal">
+        <h3>دوره‌های آموزشی</h3>
+        <p>آموزش ساختاریافته برای یادگیری مرحله‌به‌مرحله.</p>
+        <strong>ارزش: مسیر منظم یادگیری</strong>
+      </div>
+
+      <div class="service reveal">
+        <h3>تحلیل مسیر</h3>
+        <p>برای کسانی که فعالیت کرده‌اند اما نتیجه دلخواه نگرفته‌اند.</p>
+        <strong>ارزش: پیدا کردن نقاط قابل اصلاح</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل نهم</div>
+
+      <h2>محصولات و <span class="gold">مزایا</span></h2>
+
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product reveal">
+        <h3>دوره‌های جامع</h3>
+        <p>مسیرهای آموزشی منظم برای یادگیری عمیق‌تر.</p>
+        <ul>
+          <li>مرحله‌به‌مرحله</li>
+          <li>قابل مرور</li>
+          <li>ساختار مشخص</li>
+          <li>مناسب یادگیری مستقل</li>
+        </ul>
+      </div>
+
+      <div class="product reveal">
+        <h3>مینی‌دوره‌ها</h3>
+        <p>آموزش‌های کوتاه برای تمرکز روی یک مسئله مشخص.</p>
+        <ul>
+          <li>زمان کمتر</li>
+          <li>تمرکز بیشتر</li>
+          <li>شروع ساده</li>
+          <li>مناسب افراد پرمشغله</li>
+        </ul>
+      </div>
+
+      <div class="product reveal">
+        <h3>فایل‌ها و ابزارها</h3>
+        <p>ابزارهای کاربردی برای اجرای بهتر مطالب.</p>
+        <ul>
+          <li>چک‌لیست</li>
+          <li>تمرین</li>
+          <li>قالب</li>
+          <li>برنامه اجرایی</li>
+        </ul>
+      </div>
+
+      <div class="product reveal">
+        <h3>جلسات مشاوره</h3>
+        <p>جلسات اختصاصی برای بررسی شرایط مخاطب.</p>
+        <ul>
+          <li>تمرکز شخصی</li>
+          <li>بررسی مسئله</li>
+          <li>شناخت گزینه‌ها</li>
+          <li>مسیر عملی</li>
+        </ul>
+      </div>
+
+      <div class="product reveal">
+        <h3>بسته‌های آموزشی</h3>
+        <p>ترکیبی از چند آموزش مرتبط در یک مسیر کامل‌تر.</p>
+        <ul>
+          <li>انسجام بیشتر</li>
+          <li>پوشش چند موضوع</li>
+          <li>مسیر کامل‌تر</li>
+          <li>یادگیری منظم</li>
+        </ul>
+      </div>
+
+      <div class="product reveal">
+        <h3>برنامه رشد شخصی</h3>
+        <p>برای کسانی که می‌خواهند مسیرشان را منظم کنند.</p>
+        <ul>
+          <li>هدف‌گذاری</li>
+          <li>اولویت‌بندی</li>
+          <li>برنامه اجرایی</li>
+          <li>پیگیری پیشرفت</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="section-label">فصل دهم</div>
+
+      <h2>رضایت <span class="gold">مشتریان</span></h2>
+
+      <p>
+        نمونه جملات آماده برای نمایش بازخورد واقعی مشتریان.
+      </p>
+
+    </div>
+
+    <div class="testimonials">
+
+      <div class="testimonial reveal">
+        <p>«چیزی که بیشتر از همه دوست داشتم، ساده و قابل فهم بودن مطالب بود.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«برای اولین بار احساس کردم یک دوره واقعاً مسیر مشخصی برایم ساخته است.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«مطالب فقط تئوری نبود و می‌توانستم بعضی نکات را همان روز اجرا کنم.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«مشاوره کمک کرد مسئله‌ای که مدت‌ها برایم مبهم بود، واضح‌تر شود.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«از اینکه مطالب با زبان ساده گفته شده بود خیلی راضی بودم.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«یکی از نقاط قوت صفحه برای من استمرار در تولید محتوای آموزشی بود.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«بعد از آموزش فهمیدم مشکل فقط کمبود انگیزه نیست.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«توضیحات محصول باعث شد دقیق‌تر بدانم قرار است چه چیزی دریافت کنم.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>«یکی از بهترین چیزها برای من این بود که آموزش‌ها قابل استفاده در زندگی واقعی بودند.»</p>
+        <strong>بازخورد مشتری</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="contact-box reveal">
+
+      <div class="section-label">فصل یازدهم</div>
+
+      <h2>
+        آماده‌ای مسیرت را
+        <span class="gold">جدی‌تر شروع کنی؟</span>
+      </h2>
+
+      <p>
+        برای دریافت اطلاعات دوره‌ها، مشاوره، پشتیبانی
+        و همکاری از طریق راه ارتباطی زیر پیام بده.
+      </p>
+
+      <a href="https://instagram.com/sina"
+         target="_blank"
+         class="social">
+        📩 @sina
+      </a>
+
+      <br>
+
+      <a href="https://instagram.com/sina"
+         target="_blank"
+         class="btn btn-primary">
+        ارتباط با سینا
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      © 2026 سینا | روانشناسی، خودشناسی و رشد فردی
+    </p>
+
+    <p>
+      موضوع پیج و کانال:
+      تولید محتوای متنی روانشناسی
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= JS ================= -->
+
+<script>
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.08
+    }
+  );
+
+  document.querySelectorAll(".reveal")
+    .forEach(el => observer.observe(el));
+
+
+  /* Smooth navigation */
+
+  document.querySelectorAll('a[href^="#"]')
+    .forEach(anchor => {
+
+      anchor.addEventListener("click", function(e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if(target) {
+
+          e.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      });
+
+    });
+
+</script>
+
+</body>
+</html>
